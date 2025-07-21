@@ -35,41 +35,41 @@ export default function CartPage() {
   const total = subtotal + tax + shipping;
 
   return (
-    <div className="cart-page container">
-      <h1 className="page-title">Your Shopping Cart</h1>
+    <div className={`${styles.cartPage} ${styles.container}`}>
+      <h1 className={styles.pageTitle}>Your Shopping Cart</h1>
       
       {cartProducts.length === 0 ? (
-        <div className="empty-cart">
-          <div className="empty-cart-icon">🛒</div>
+        <div className={styles.emptyCart}>
+          <div className={styles.emptyCartIcon}>🛒</div>
           <h2>Your cart is empty</h2>
           <p>Looks like you haven't added any items to your cart yet</p>
-          <Link href="/" className="continue-shopping-btn">
+          <Link href="/" className={styles.continueShoppingbtn}>
             Continue Shopping
           </Link>
         </div>
       ) : (
-        <div className="cart-container">
-          <div className="cart-items">
+        <div className={styles.cartContainer}>
+          <div className={styles.cartItems}>
             {cartProducts.map(item => (
-              <div key={item.id} className="cart-item">
-                <div className="cart-item-image">
+              <div key={item.id} className={styles.cartItem}>
+                <div className={styles.cartItemImage}>
                   <Image
                     src={item.image}
                     alt={item.name}
-                    width={120}
-                    height={120}
+                    width={40}
+                    height={40}
                   />
                 </div>
                 
-                <div className="cart-item-details">
-                  <h3 className="cart-item-name">{item.name}</h3>
-                  <div className="cart-item-price">${item.price.toFixed(2)}</div>
+                <div className={styles.cartItemDetails}>
+                  <h3 className={styles.cartItemName}>{item.name}</h3>
+                  <div className={styles.cartItemPrice}>${item.price.toFixed(2)}</div>
                   
-                  <div className="cart-item-quantity">
+                  <div className={styles.cartItemQuantity}>
                     <label htmlFor={`quantity-${item.id}`}>Quantity:</label>
                     <select 
                       id={`quantity-${item.id}`} 
-                      className="quantity-select"
+                      className={styles.quantitySelect}
                       defaultValue={item.quantity}
                     >
                       {[...Array(10).keys()].map(i => (
@@ -78,43 +78,43 @@ export default function CartPage() {
                     </select>
                   </div>
                   
-                  <div className="cart-item-subtotal">
+                  <div className={styles.cartItemSubtotal}>
                     Subtotal: <span>${(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                   
-                  <button className="remove-item-btn">Remove</button>
+                  <button className={styles.removeItembtn}>Remove</button>
                 </div>
               </div>
             ))}
           </div>
           
-          <div className="cart-summary">
-            <h2 className="summary-title">Order Summary</h2>
+          <div className={styles.cartSummary}>
+            <h2 className={styles.summaryTitle}>Order Summary</h2>
             
-            <div className="summary-item">
+            <div className={styles.summaryItem}>
               <span>Subtotal:</span>
               <span>${subtotal.toFixed(2)}</span>
             </div>
             
-            <div className="summary-item">
+            <div className={styles.summaryItem}>
               <span>Shipping:</span>
               <span>${shipping.toFixed(2)}</span>
             </div>
             
-            <div className="summary-item">
+            <div className={styles.summaryItem}>
               <span>Tax (8%):</span>
               <span>${tax.toFixed(2)}</span>
             </div>
             
-            <div className="summary-total">
+            <div className={styles.summaryTotal}>
               <span>Total:</span>
               <span>${total.toFixed(2)}</span>
             </div>
             
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <button className={styles.checkoutbtn}>Proceed to Checkout</button>
             
-            <div className="continue-shopping">
-              <Link href="/" className="continue-link">
+            <div className={styles.continueShopping}>
+              <Link href="/" className={styles.continueLink}>
                 ← Continue Shopping
               </Link>
             </div>

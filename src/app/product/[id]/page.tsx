@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { dummyProducts } from '@/utils/constants';
-import './product.module.css'; // Assuming you have a CSS file for styling
+import styles from'./product.module.css'; // Assuming you have a CSS file for styling
 
 type Props = {
   params: { id: string };
@@ -31,55 +31,55 @@ export default function ProductDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="product-detail container">
-      <div className="product-detail-grid">
-        <div className="product-image-container">
+    <div className={`${styles.productDetail} ${styles.container}`}>
+      <div className={styles.productDetailGrid}>
+        <div className={styles.productImageContainer}>
           <Image
             src={product.image}
             alt={product.name}
             width={600}
             height={600}
-            className="product-image"
+            className={styles.productImage}
           />
         </div>
         
-        <div className="product-info">
-          <h1 className="product-name">{product.name}</h1>
+        <div className={styles.productInfo}>
+          <h1 className={styles.productName}>{product.name}</h1>
           
-          <div className="product-meta">
-            <div className="product-rating">
+          <div className={styles.productMeta}>
+            <div className={styles.productRating}>
               {"★".repeat(product.rating)}{"☆".repeat(5 - product.rating)}
-              <span className="rating-count">(42 reviews)</span>
+              <span className={styles.ratingCount}>(42 reviews)</span>
             </div>
             
-            <div className="product-price">${product.price.toFixed(2)}</div>
+            <div className={styles.productPrice}>${product.price.toFixed(2)}</div>
             
-            <div className="product-stock">
+            <div className={styles.productStock}>
               {product.stock > 0 ? (
-                <span className="in-stock">In Stock ({product.stock} available)</span>
+                <span className={styles.inStock}>In Stock ({product.stock} available)</span>
               ) : (
-                <span className="out-of-stock">Out of Stock</span>
+                <span className={styles.outOfStock}>Out of Stock</span>
               )}
             </div>
           </div>
           
-          <p className="product-description">{product.description}</p>
+          <p className={styles.productDescription}>{product.description}</p>
           
-          <div className="product-actions">
-            <div className="quantity-selector">
+          <div className={styles.productActions}>
+            <div className={styles.quantitySelector}>
               <label htmlFor="quantity">Quantity:</label>
-              <select id="quantity" className="quantity-select">
+              <select id="quantity" className={styles.quantitySelect}>
                 {[...Array(10).keys()].map(i => (
                   <option key={i+1} value={i+1}>{i+1}</option>
                 ))}
               </select>
             </div>
             
-            <button className="add-to-cart-btn">Add to Cart</button>
-            <button className="buy-now-btn">Buy Now</button>
+            <button className={styles.addtoCartBtn}>Add to Cart</button>
+            <button className={styles.buyNowBtn}>Buy Now</button>
           </div>
           
-          <div className="product-details">
+          <div className={styles.productDetails}>
             <h3>Product Details</h3>
             <ul>
               <li><strong>Category:</strong> {product.category}</li>

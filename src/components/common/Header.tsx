@@ -23,7 +23,7 @@ const Header = () => {
         
         <nav className={styles.headerNav}>
           <Link href="/cart" className={styles.navLink}>
-            Cart (cartItemCount)
+            Cart {cartItemCount}
           </Link>
           <Link href="/admin/dashboard" className={styles.navLink}>
             Admin

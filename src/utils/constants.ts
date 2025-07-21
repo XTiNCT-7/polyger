@@ -16,7 +16,7 @@ export const dummyProducts: Product[] = [
     price: 99.99,
     description: 'High-quality wireless headphones with noise cancellation and 30-hour battery life.',
     category: 'Electronics',
-    image: '/images/bluetooth-headphones.png', // Placeholder image
+    image: '/images/bluetooth-headphone.png', // Placeholder image 
     rating: 4,
     stock: 50
   },
