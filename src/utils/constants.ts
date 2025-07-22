@@ -26,7 +26,7 @@ export const dummyProducts: Product[] = [
     price: 199.99,
     description: 'Track your fitness, receive notifications, and more with this advanced smartwatch.',
     category: 'Electronics',
-    image: 'https://via.placeholder.com/250', // Placeholder image
+    image: '/images/smart-watch.jpg', // Placeholder image
     rating: 5,
     stock: 30
   },
@@ -36,7 +36,7 @@ export const dummyProducts: Product[] = [
     price: 89.99,
     description: 'Mechanical keyboard with RGB lighting and wireless connectivity.',
     category: 'Electronics',
-    image: 'https://via.placeholder.com/250', // Placeholder image
+    image: '/images/keyboard.jpg', // Placeholder image
     rating: 4,
     stock: 45
   },
@@ -46,7 +46,7 @@ export const dummyProducts: Product[] = [
     price: 129.99,
     description: 'True wireless earbuds with active noise cancellation.',
     category: 'Electronics',
-    image: 'https://via.placeholder.com/250', // Placeholder image
+    image: '/images/earbuds.jpg', // Placeholder image
     rating: 5,
     stock: 60
   },

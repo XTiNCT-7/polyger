@@ -37,8 +37,8 @@ export default function ProductDetailPage({ params }: Props) {
           <Image
             src={product.image}
             alt={product.name}
-            width={600}
-            height={600}
+            width={100}
+            height={100}
             className={styles.productImage}
           />
         </div>
