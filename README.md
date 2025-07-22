@@ -1,7 +1,7 @@
 # Polyger E-commerce Platform
 
 ![Polyger Logo](public/images/logo.png)
-[![Click Here to visit]()}(https://polyger.vercel.app)
+[![Click Here to visit]()](https://polyger.vercel.app)
 
 A modern, user-friendly e-commerce platform built with Next.js, TypeScript, and PostgreSQL.
 
