@@ -1,0 +1,104 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--bg-color);
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Admin Dashboard Card */
+.dashboard-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h3 {
+  font-size: 1rem;
+  color: var(--light-text);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-card .value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-card .change {
+  color: var(--success-color);
+  font-weight: 600;
+}
+
+/* Admin Table Styles */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table th {
+  font-weight: 600;
+  color: var(--light-text);
+  background-color: var(--bg-color);
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 250px; /* Same as sidebar width */
+  background-color: var(--bg-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 200px;
+  }
+  
+  .admin-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-sidebar {
+    width: 60px;
+  }
+  
+  .admin-sidebar .menu-text {
+    display: none;
+  }
+  
+  .admin-sidebar .menu-icon {
+    margin-right: 0;
+    font-size: 1.25rem;
+  }
+  
+  .admin-content {
+    margin-left: 60px;
+  }
+}

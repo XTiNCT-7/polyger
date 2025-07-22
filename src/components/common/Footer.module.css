@@ -1,0 +1,88 @@
+.siteFooter {
+  background-color: #2d3748;
+  color: #ffffff;
+  padding: 2rem 0 0;
+  margin-top: 3rem;
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footerSection {
+  margin-bottom: 1.5rem;
+}
+
+.footerHeading {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footerText {
+  color: #a0aec0;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 0.5rem;
+}
+
+.footerLinks a {
+  color: #a0aec0;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footerLinks a:hover {
+  color: #ffffff;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  color: #a0aec0;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: #ffffff;
+}
+
+.footerBottom {
+  background-color: #1a202c;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+  }
+}
