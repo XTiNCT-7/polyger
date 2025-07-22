@@ -28,7 +28,7 @@ export default function CartPage() {
 
   // Calculate total
   const subtotal = cartProducts.reduce(
-    (sum, item) => sum + (item.price * item.quantity), 0
+    (sum, item) => sum + ((item.price ?? 0) * item.quantity), 0
   );
   const tax = subtotal * 0.08;
   const shipping = subtotal > 0 ? 5.99 : 0;
@@ -54,8 +54,8 @@ export default function CartPage() {
               <div key={item.id} className={styles.cartItem}>
                 <div className={styles.cartItemImage}>
                   <Image
-                    src={item.image}
-                    alt={item.name}
+                    src={item.image || '/images/smart-watch.png'} // Fallback image
+                    alt={item.name || 'Product Image'}
                     width={40}
                     height={40}
                   />
@@ -63,7 +63,7 @@ export default function CartPage() {
                 
                 <div className={styles.cartItemDetails}>
                   <h3 className={styles.cartItemName}>{item.name}</h3>
-                  <div className={styles.cartItemPrice}>${item.price.toFixed(2)}</div>
+                  <div className={styles.cartItemPrice}>${(item.price ?? 0).toFixed(2)}</div>
                   
                   <div className={styles.cartItemQuantity}>
                     <label htmlFor={`quantity-${item.id}`}>Quantity:</label>
@@ -79,7 +79,7 @@ export default function CartPage() {
                   </div>
                   
                   <div className={styles.cartItemSubtotal}>
-                    Subtotal: <span>${(item.price * item.quantity).toFixed(2)}</span>
+                    Subtotal: <span>${((item.price ?? 0) * item.quantity).toFixed(2)}</span>
                   </div>
                   
                   <button className={styles.removeItembtn}>Remove</button>

@@ -5,11 +5,11 @@ import { dummyProducts } from '@/utils/constants';
 import styles from'./product.module.css'; // Assuming you have a CSS file for styling
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }> 
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product = dummyProducts.find(p => p.id === params.id);
+  const product = dummyProducts.find(async p => p.id === (await params).id);
   
   if (!product) {
     return {
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function ProductDetailPage({ params }: Props) {
-  const product = dummyProducts.find(p => p.id === params.id);
+  const product = dummyProducts.find(async p => p.id === (await params).id);
 
   if (!product) {
     notFound();
