@@ -17,6 +17,7 @@
   background-color: #f8f9fa;
   border-radius: 8px;
   overflow: hidden;
+  aspect-ratio: 1 / 1; /* Ensures square aspect ratio */
 }
 
 .productImage {
@@ -26,6 +27,8 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  image-rendering: -webkit-optimize-contrast; /* Sharper rendering */
+  image-rendering: crisp-edges;
 }
 
 .productInfo {

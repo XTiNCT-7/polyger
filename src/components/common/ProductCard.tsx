@@ -21,10 +21,16 @@ const ProductCard = ({ product }: { product: Product }) => {
           <Image 
             src={product.image}
             alt={product.name}
-            width={50}
-            height={50}
+            width={300}
+            height={300}
             className={styles.productImage}
-            style={{ objectFit: 'cover' }}
+            quality={85}
+            priority={false}
+            loading="lazy"
+            style={{
+              objectFit: 'cover', // or 'contain' based on your needs
+              objectPosition: 'center',
+            }}
           />
         </div>
         <div className={styles.productInfo}>
